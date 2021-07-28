@@ -1,0 +1,123 @@
+/* typography */
+a {
+    color: $link;
+    text-decoration: none;
+    background-color: $transparent;
+    transition: color $d $f, background-color $d $f, border-color $d $f;
+    will-change: color, background-color, border-color;
+    &:hover {
+        color: $link-hover;
+        text-decoration: none;
+    }
+    &.underline {
+        text-decoration: underline;
+    }
+}
+.wysiwyg {
+    line-height: 1.75;
+    & :first-child {
+        margin-top: 0 !important;
+    }
+    h1 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h2 {
+        line-height: 1.55;
+        font-size: 22px;
+        font-weight: 500;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    p + h2 {
+        margin-top: 40px;
+    }
+    h3 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h4 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h5 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h6 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    p {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    a {
+        word-break: break-all;
+        word-break: break-word;
+        hyphens: auto;
+    }
+    img {
+        display: block;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        &.alignleft {
+            margin: $spacer $spacer $spacer 0;
+        }
+        &.alignright {
+            margin: $spacer 0 $spacer $spacer;
+        }
+        &.aligncenter {
+        }
+    }
+    blockquote {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        padding-left: $spacer;
+        font-style: italic;
+        p {
+            margin-bottom: 0;
+        }
+    }
+    hr {
+        clear: both;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        border: 0;
+        border-bottom: 1px solid $primary-light-gray;
+        &.transparent {
+            border-bottom-color: $transparent;
+        }
+    }
+    ul {
+        overflow: hidden;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        list-style: inside disc;
+        li {
+            padding-left: $spacer;
+        }
+    }
+    ol {
+        overflow: hidden;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        list-style: inside decimal;
+        li {
+            padding-left: $spacer;
+        }
+    }
+    table {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        th {
+            padding: $spacer/2 $spacer;
+            background: $primary-light-gray;
+            border: 1px solid $primary-light-gray;
+        }
+        td {
+            padding: $spacer/2 $spacer;
+            border: 1px solid $primary-light-gray;
+        }
+    }
+}

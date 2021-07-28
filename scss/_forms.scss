@@ -1,0 +1,435 @@
+/* forms */
+.error {
+    color: $error !important;
+    border-color: $error !important;
+}
+.success {
+    color: $success !important;
+    border-color: $success !important;
+}
+.disabled {
+    color: $primary-gray !important;
+    border-color: $primary-gray !important;
+    cursor: default !important;
+}
+input.input-text,
+textarea.textarea,
+select.select {
+    color: $primary-black;
+    font-size: 14px;
+    padding: 5px 15px;
+    height: 40px;
+    font-family: $fontFamily;
+    width: 100%;
+    border: 1px solid rgba(#BFC5D2, 0.4);
+    background: $primary-white;
+    border-radius: 4px;
+    vertical-align: top;
+    transition: color $d $f, background-color $d $f, border-color $d $f;
+    will-change: color, background-color, border-color;
+    appearance: none;
+    &-date {
+        background-image: url('../images/datepicker.svg');
+        background-repeat: no-repeat;
+        background-position: calc(100% - 15px) 50%;
+        padding-right: 40px;
+    }
+    &:focus {
+        border-color: $primary-purple;
+    }
+    &::placeholder {
+        color: $primary-gray;
+    }
+}
+textarea.textarea {
+    padding-top: 10px;
+    vertical-align: top;
+    overflow: auto;
+    height: auto;
+}
+select.select {
+    padding-right: 34px;
+    appearance: none;
+    background: $primary-white url('../images/select-down.svg') no-repeat 100% 50%;
+    background-size: 28px 16px;
+}
+select.select::-ms-expand {
+    display: none;
+}
+.checkbox,
+.radio {
+    margin-top: 9px;
+    display: block;
+    input {
+        appearance: none;
+        position: absolute;
+        left: -9999px;
+        visibility: hidden;
+        &:checked + label {
+            &:before {
+                border-color: $primary-purple;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+        &:disabled + label {
+            opacity: 0.3;
+        }
+    }
+    label {
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 500;
+        display: block;
+        padding-left: 32px;
+        position: relative;
+        user-select: none;
+        &:before {
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border: 1px solid $primary-gray;
+            transition: border-color $d $f;
+        }
+        &:after {
+            opacity: 0;
+            left: 3px;
+            top: 3px;
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: $primary-purple;
+            transition: opacity $d $f;
+        }
+    }
+}
+.checkbox {
+    label {
+        &:before,
+        &:after {
+            border-radius: 2px;
+        }
+    }
+}
+.button,
+a.button,
+input.button,
+button.button {
+    text-align: center;
+    background: $primary-purple;
+    border: 1px solid $primary-purple;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    color: $primary-white;
+    transition: color $d $f, background-color $d $f, border-color $d $f;
+    will-change: color, background-color, border-color;
+    border-radius: 4px;
+    padding: 9px 34px 8px;
+    &:hover {
+        border-color: $link-hover;
+        background-color: $link-hover;
+    }
+    &.button-medium {
+        padding-top: 11px;
+        padding-bottom: 10px;
+    }
+    &.button-xmedium {
+        padding-top: 12px;
+        padding-bottom: 11px;
+    }
+    &.button-big {
+        padding-top: 14px;
+        padding-bottom: 13px;
+    }
+    &.button-huge {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    &.button-full {
+        width: 100%;
+        display: block;
+    }
+    &.button-white {
+        color: $primary-black;
+        background: $primary-white;
+        border-color: $primary-white;
+        &:hover {
+            color: $primary-black;
+            border-color: $secondary-light-gray;
+            background-color: $secondary-light-gray;
+        }
+    }
+    &.button-ghost {
+        background-color: $primary-white;
+        color: $primary-purple;
+        &:hover {
+            color: $link-hover;
+        }
+    }
+    &.button-ghost-transparent {
+        background-color: $transparent;
+        color: $primary-purple;
+        &:hover {
+            background-color: $transparent;
+            color: $link-hover;
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+    &.button-gray {
+        background: $primary-gray;
+        border-color: $primary-gray;
+        &:hover {
+            background-color: darken($primary-gray, 15%);
+            border-color: darken($primary-gray, 15%);
+        }
+    }
+    &.button-light-gray {
+        background: #f2f2f3;
+        border-color: #f2f2f3;
+        color: #7C8087;
+        &:hover {
+            color: #7C8087;
+            background-color: darken(#f2f2f3, 5%);
+            border-color: darken(#f2f2f3, 5%);
+        }
+    }
+}
+input.button,
+button.button {
+    line-height: normal;
+}
+.form {
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+    &-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        &-x2,
+        &-x4,
+        &-x28,
+        &-x16,
+        &-auto {
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-bottom: 24px;
+        }
+        &-x2 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        &-x4 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+        &-x28 {
+            flex: 0 0 28%;
+            max-width: 28%;
+        }
+        &-x16 {
+            flex: 0 0 16%;
+            max-width: 16%;
+        }
+    }
+    &-cell {
+        display: block;
+        &-success {
+            background: rgba($secondary-green, 0.1);
+            color: $secondary-green;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.2;
+            border-radius: 4px;
+            text-align: center;
+            img {
+                vertical-align: middle;
+                position: relative;
+                top: -2px;
+                margin-right: 5px;
+            }
+        }
+        label {
+            font-size: 12px;
+            color: #697A8F;
+            display: block;
+            margin: 0 0 4px;
+        }
+        &-sub {
+            margin-top: 26px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+    &-separator {
+        margin-top: 7px;
+        margin-bottom: 33px;
+        height: 1px;
+        background: $secondary-light-gray;
+    }
+}
+.block-sign-in {
+    margin: 68px auto;
+    max-width: 484px;
+    padding: 82px;
+    border: 1px solid #F2F2F2;
+    background: $primary-white;
+    border-radius: 7px;
+    input.input-text {
+        height: 44px;
+    }
+    .checkbox {
+        label {
+            font-size: 14px;
+            font-weight: normal;
+            padding-left: 29px;
+            line-height: 16px;
+            &:before {
+                width: 16px;
+                height: 16px;
+            }
+            &:after {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+    .form-cell {
+        margin-bottom: 40px;
+        &-line {
+            margin-top: -12px;
+            margin-bottom: 30px;
+        }
+    }
+}
+.forgot-password-link {
+    font-size: 14px;
+    font-weight: bold;
+}
+.sign-in {
+    &-title {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 28px;
+    }
+    &-note {
+        font-size: 16px;
+        color: #8798AD;
+        line-height: 1.375;
+        margin-bottom: 38px;
+    }
+}
+
+.ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.ui-datepicker {
+    width: 100%;
+    background: $transparent;
+}
+.ui-datepicker-header {
+    position: relative;
+    padding: 0 24px 2px;
+    margin-bottom: 10px;
+}
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    position: absolute;
+    right: 0;
+    top: -2px;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    line-height: 0;
+    background: $transparent url("../images/datepicker-arrow.svg") 50% 50% no-repeat;
+    background-size: 100% 100%;
+}
+.ui-datepicker-prev {
+    left: 0;
+    right: auto;
+    transform: rotate(-180deg);
+}
+.ui-datepicker-prev span,
+.ui-datepicker-next span {
+    display: none;
+}
+.ui-datepicker-title {
+    font-size: 14px;
+    line-height: 1.43;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+.ui-datepicker-calendar {
+    table-layout: fixed;
+    width: 100%;
+}
+.ui-datepicker-calendar th {
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+    color: $primary-gray;
+    text-transform: uppercase;
+    padding: 10px 0 12px;
+    span {
+        cursor: default;
+    }
+}
+.ui-datepicker-calendar td {
+    text-align: center;
+    padding: 0;
+    span {
+        color: #cccccc;
+        cursor: default;
+    }
+    a {
+        display: block;
+        padding: 10px 0;
+        font-size: 14px;
+        line-height: 1.43;
+        color: $primary-black;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+            color: $primary-black;
+            background-color: #f5f5f5;
+        }
+        &.ui-state-active {
+            color: $primary-white;
+            background-color: $primary-purple;
+            cursor: default;
+            border-radius: 4px;
+        }
+    }
+}
+.ui-datepicker-calendar .ui-state-disabled {
+    span {
+        text-decoration: line-through;
+        display: block;
+        padding: 10px 0;
+        font-size: 14px;
+        line-height: 1.43;
+        text-align: center;
+        color: #959EAD;
+    }
+}

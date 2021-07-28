@@ -1,0 +1,120 @@
+/* header */
+.header-global {
+    background: #0f1420;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 5050;
+    .row {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 82px;
+    }
+}
+.page-white {
+    .header-global {
+        position: relative;
+        background: transparent;
+    }
+}
+.logo {
+    max-width: 130px;
+    &-link {
+        display: block;
+        img {
+            max-height: 62px;
+        }
+    }
+}
+.header-push {
+    height: 82px;
+}
+.header-signin {
+    text-align: right;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    li {
+        list-style: none;
+        margin: 0 20px;
+    }
+    & > li {
+        &.active {
+            & > a {
+                color: $primary-white;
+            }
+        }
+        &:hover {
+            & > a {
+                color: rgba($primary-white, 0.8);
+            }
+            // & > ul {
+            //     display: block;
+            // }
+        }
+        & > a {
+            display: block;
+            color: $primary-gray;
+        }
+        & > ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+        }
+    }
+}
+.navigation {}
+.navigation-toggle {
+    display: none;
+    z-index: 5060;
+    width: 60px;
+    height: 60px;
+    margin-left: -8px;
+    position: relative;
+}
+.navigation-toggle-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    border-radius: 1.5px;
+    background: $primary-white;
+    transform: translate3d(0, -50%, 0);
+    transition: background-color $d $f;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        border-radius: 1.5px;
+        background: $primary-white;
+        transform: translate3d(0, -10px, 0);
+        transition: transform $d $f;
+    }
+    &:after {
+        transform: translate3d(0, 10px, 0);
+    }
+}
+.navigation-open {
+    .navigation-toggle-icon {
+        background-color: $transparent;
+        &:after {
+            transform: rotate(-45deg);
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+    }
+}
