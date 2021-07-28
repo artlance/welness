@@ -378,8 +378,10 @@ input.input-text-search {
                     display: block;
                     width: 100%;
                     max-width: 281px;
-                    height: auto;
+                    height: 180px;
                     border-radius: 4px;
+                    object-fit: contain;
+                    background: $primary-white;
                 }
             }
             &-features {
