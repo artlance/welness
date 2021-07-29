@@ -467,7 +467,7 @@ $(document).ready(function () {
         $('.class-single-prices-all').toggleClass('drop-opened');
     });
 
-    // -------------------------------------------------- //
+    //------------------------------------------------------------------------//
 
     $(document).on('click', '.calendar-date-number', function (event) {
         event.preventDefault();
@@ -477,6 +477,19 @@ $(document).ready(function () {
         console.log('click');
     });
 
+    //------------------------------------------------------------------------//
+
+    //countdown
+    if ($('.countdown').length) {
+        $('.countdown').downCount({
+            date: '08/01/2021 12:00:00',
+            offset: -4
+        }, function () {
+            //callback
+        });
+    }
+
+    //------------------------------------------------------------------------//
 
 });//document ready
 
