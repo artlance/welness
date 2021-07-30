@@ -491,6 +491,30 @@ $(document).ready(function () {
 
     //------------------------------------------------------------------------//
 
+    //program sidebar category
+    $(document).on('click', '.program-sidebar-category-toggle', function (event) {
+        event.preventDefault();
+        $(this).parents('.program-sidebar-category').toggleClass('active');
+    });
+
+    //------------------------------------------------------------------------//
+
+    //comment reply
+    $(document).on('click', '.comment-footer-reply-toggle', function (event) {
+        event.preventDefault();
+        $(this).parent('.comment-footer-reply').siblings('.comment-footer-reply-block').slideToggle(100);
+    });
+
+    //------------------------------------------------------------------------//
+
+    //comment replies
+    $(document).on('click', '.comment-footer-replies-toggle', function (event) {
+        event.preventDefault();
+        $(this).toggleClass('active').parent('.comment-footer-reply').siblings('.comment-footer-replies-block').slideToggle(100);
+    });
+
+    //------------------------------------------------------------------------//
+
 });//document ready
 
 //*********************************************************************//

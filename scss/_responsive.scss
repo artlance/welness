@@ -315,9 +315,12 @@
                 margin-bottom: 52px;
             }
             &-wrap {
-                padding-top: 24px;
+                padding: 24px 24px 5px;
+            }
+        }
+        &-footer {
+            &-replies-block {
                 padding-left: 24px;
-                padding-right: 24px;
             }
         }
     }
@@ -1343,7 +1346,7 @@
     .comment {
         &s {
             &-wrap {
-                padding: 30px 20px 20px;
+                padding: 30px 20px 11px;
             }
             &-meta {
                 flex-wrap: wrap;
@@ -1355,6 +1358,11 @@
                         margin-bottom: 15px;
                     }
                 }
+            }
+        }
+        &-footer {
+            &-replies-block {
+                padding-left: 20px;
             }
         }
     }
@@ -1916,6 +1924,22 @@
             flex: 0 0 100%;
             max-width: 100%;
             margin-bottom: 15px;
+        }
+    }
+    .block {
+        &-info {
+            &-wrapper {
+                flex-wrap: wrap;
+                .block-info {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    &-like {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        padding-left: 0;
+                    }
+                }
+            }
         }
     }
 }
