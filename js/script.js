@@ -343,6 +343,15 @@ $(document).ready(function () {
     //         },
     //     }
     // });
+
+    $('.class-single-gallery-main img, .class-single-gallery-main video').each(function (index, element) {
+        $(this)
+            .parents('.swiper-slide')
+            .css({
+                'width': $(element).innerWidth()
+            });
+    });
+
     var classSingleGalleryMain = new Swiper(".class-single-gallery-main-js", {
         spaceBetween: 20,
         slidesPerView: "auto",

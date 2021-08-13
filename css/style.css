@@ -7986,13 +7986,10 @@ a.payment-default {
   right: -65px;
   right: -20px;
 }
-.class-single-gallery-main .swiper-slide {
-  height: 465px;
-}
 .class-single-gallery-main .swiper-slide video,
 .class-single-gallery-main .swiper-slide img {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: 465px;
   display: block;
   margin: 0;
   border-radius: 4px;
