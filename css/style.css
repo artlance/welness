@@ -2923,7 +2923,7 @@ button.button {
 
 .ui-datepicker-calendar td {
   text-align: center;
-  padding: 0;
+  padding: 2px;
 }
 .ui-datepicker-calendar td span {
   color: #cccccc;
@@ -2931,12 +2931,14 @@ button.button {
 }
 .ui-datepicker-calendar td a {
   display: block;
-  padding: 10px 0;
+  padding: 8px 0;
   font-size: 14px;
   line-height: 1.43;
   color: #1A191C;
   text-align: center;
   text-decoration: none;
+  background: rgba(141, 82, 217, 0.05);
+  border-radius: 4px;
 }
 .ui-datepicker-calendar td a:hover {
   color: #1A191C;
@@ -4320,7 +4322,49 @@ a.more:after {
   font-size: 14px;
   color: #7C8087;
   flex-grow: 1;
-  text-align: right;
+}
+.comment-header-options {
+  position: relative;
+  flex: 0 0 30px;
+  max-width: 30px;
+  height: 30px;
+}
+.comment-header-options:hover .comment-header-options-more {
+  display: block;
+}
+.comment-header-options-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+.comment-header-options-toggle svg {
+  display: block;
+  margin: 0;
+}
+.comment-header-options-more {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 100%;
+  right: 0;
+  padding: 5px 0;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+.comment-header-options-more::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 30px;
+  top: -30px;
+  height: 30px;
+}
+.comment-header-options-button {
+  display: block;
+  padding: 5px 20px;
 }
 .comment:first-child {
   border-top: 0;
@@ -4551,6 +4595,14 @@ a.more:after {
   padding-top: 10px;
   font-size: 14px;
   line-height: 1.572;
+}
+.comment-footer-reply-options {
+  text-align: right;
+}
+.comment-footer-reply-options .button {
+  vertical-align: top;
+  margin: 10px 0 0 6px;
+  min-width: 120px;
 }
 .comment-footer-like {
   white-space: nowrap;

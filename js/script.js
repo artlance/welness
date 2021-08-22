@@ -409,7 +409,7 @@ $(document).ready(function () {
 
     //------------------------------------------------------------------------//
 
-    var dates = ["20/06/2021", "22/06/2021", "23/06/2021"];
+    var dates = ["20/08/2021", "22/08/2021", "23/08/2021"];
 
     function DisableDates(date) {
         var string = jQuery.datepicker.formatDate('dd/mm/yy', date);
